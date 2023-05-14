@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import styles from '../styles/EachToDo.module.css';
+import styles from '../styles/EachMessage.module.css';
 import { Message } from '../db/models/messages';
 
 type Props = {
@@ -26,7 +26,8 @@ const EachMessage = ({ message, deleteHandler }: Props) => {
           />
           <span style={toDoItem.completed ? { textDecoration: 'line-through' } : {}}>{toDoItem.text}</span>
         </button> */}
-        <div>{message.text}</div>
+        <span>{message.from}</span>
+        <span>{message.text}</span>
         <button
           className={styles.deleteBtn}
           onClick={() => {

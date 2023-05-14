@@ -1,5 +1,4 @@
 import type { GetServerSideProps, NextPage } from 'next';
-import Image from 'next/image';
 import Head from 'next/head';
 import { useState } from 'react';
 import LoaderWave from '../components/LoaderWave';
@@ -175,10 +174,6 @@ const Home: NextPage<Props> = ({ messages }) => {
             </ul>
           )}
         </div>
-
-        <a href="https://tigrisdata.com/">
-          <Image src="/tigris_logo.svg" alt="Tigris Logo" width={100} height={100} />
-        </a>
       </div>
     </div>
   );
