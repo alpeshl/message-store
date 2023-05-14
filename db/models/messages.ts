@@ -2,14 +2,14 @@ import { Field, PrimaryKey, TigrisCollection, TigrisDataTypes } from '@tigrisdat
 
 @TigrisCollection('messages')
 export class Message {
-  @Field(TigrisDataTypes.INT64)
+  @Field(TigrisDataTypes.STRING)
   from!: string;
 
   @Field()
   text!: string;
 
-  @Field(TigrisDataTypes.DATE_TIME)
-  timestamp!: Date;
+  @Field(TigrisDataTypes.STRING)
+  timestamp!: string;
 
   @PrimaryKey({ order: 1 })
   uid!: number;
