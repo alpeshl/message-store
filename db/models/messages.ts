@@ -12,5 +12,5 @@ export class Message {
   timestamp!: string;
 
   @PrimaryKey({ order: 1 })
-  uid!: number;
+  uid!: string;
 }

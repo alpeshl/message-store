@@ -5,7 +5,7 @@ import { Message } from '../db/models/messages';
 
 type Props = {
   message: Message;
-  deleteHandler: (id?: number) => void;
+  deleteHandler: (id?: string) => void;
 };
 const EachMessage = ({ message, deleteHandler }: Props) => {
   return (

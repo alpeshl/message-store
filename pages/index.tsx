@@ -60,7 +60,7 @@ const Home: NextPage<Props> = ({ messages }) => {
   'deleteMessage' requires an id value of the Message. When the user presses the 'delete'(cross) button from a Message, this method is invoked.
   It calls the endpoint 'api/item/<id>' with the 'DELETE' method. Read the method 'handleDelete' under pages/api/item/[id]' to learn more how the api handles deletion.
   */
-  const deleteMessage = (id?: number) => {
+  const deleteMessage = (id?: string) => {
     setFetchStatus('loading');
 
     fetch('/api/messages/' + id, {
