@@ -16,7 +16,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   }
   try {
     const messagesCollection = tigrisDb.getCollection<Message>(Message);
-    const searchResult = await messagesCollection.search({ q: query as string });
+    const searchResult = await messagesCollection.search({
+      q: query as string,
+      sort: [
+        {
+          field: 'timestamp',
+          order: '$desc'
+        }
+      ]
+    });
     const messages = new Array<Message>();
     for await (const res of searchResult) {
       res.hits.forEach(hit => messages.push(hit.document));

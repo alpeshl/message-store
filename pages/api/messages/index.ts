@@ -26,7 +26,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 async function handleGet(req: NextApiRequest, res: NextApiResponse<Response>) {
   try {
     const messagesCollection = tigrisDb.getCollection<Message>(Message);
-    const cursor = messagesCollection.findMany();
+    const cursor = messagesCollection.findMany({
+      sort: [
+        {
+          field: 'timestamp',
+          order: '$desc'
+        }
+      ]
+    });
     const messages = await cursor.toArray();
     res.status(200).json({ result: messages });
   } catch (err) {
