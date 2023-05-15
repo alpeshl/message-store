@@ -169,7 +169,7 @@ const Home: NextPage<Props> = ({ messages }) => {
           ) : (
             <ul>
               {messagesList.map(each => {
-                return <EachMessage key={each.uid} message={each} deleteHandler={deleteMessage} />;
+                return <EachMessage key={each.id} message={each} deleteHandler={deleteMessage} />;
               })}
             </ul>
           )}

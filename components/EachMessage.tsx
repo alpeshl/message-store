@@ -27,7 +27,9 @@ const EachMessage = ({ message, deleteHandler }: Props) => {
           <span style={toDoItem.completed ? { textDecoration: 'line-through' } : {}}>{toDoItem.text}</span>
         </button> */}
         <span>{message.from}</span>
+        <span>{message.messageType}</span>
         <span>{message.text}</span>
+        <span>{message.timestamp.toString()}</span>
         <button
           className={styles.deleteBtn}
           onClick={() => {

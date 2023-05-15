@@ -12,6 +12,9 @@
   width: 150px;
 }
 .each :nth-child(2) {
+  width: 100px;
+}
+.each :nth-child(3) {
   width: 400px;
 }
 

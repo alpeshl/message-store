@@ -18,6 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const messagesCollection = tigrisDb.getCollection<Message>(Message);
     const searchResult = await messagesCollection.search({
       q: query as string,
+      searchFields: ['text', 'from'],
       sort: [
         {
           field: 'timestamp',

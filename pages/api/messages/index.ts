@@ -30,7 +30,7 @@ async function handleGet(req: NextApiRequest, res: NextApiResponse<Response>) {
       sort: [
         {
           field: 'timestamp',
-          order: '$desc'
+          order: '$asc'
         }
       ]
     });
